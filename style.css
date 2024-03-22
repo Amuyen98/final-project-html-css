@@ -1,0 +1,306 @@
+/*
+
+<uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 700
+
+.roboto-mono-<uniquifier> {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+<uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 200 to 900
+
+.source-code pro-<uniquifier> {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+*/
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'source-code pro', monospace;
+    list-style: none;
+    text-decoration: none;
+    color: greenyellow;
+}
+
+body{
+    background-color: darkslategrey;
+}
+
+header{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 3%;
+}
+
+.logo{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.navList{
+    display: flex;
+}
+
+.navList a{
+    margin-left: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .3s ease;
+}
+
+.navList a:hover{
+    border-bottom: 2px solid #adff2f;
+}
+
+
+#menuIcon{
+    display: none;
+}
+
+#menuIcon{
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer;
+}
+
+#menuToggle{
+    display: none;
+}
+
+.menuIconAction{
+    display: none;
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #1f1f1f 0%, #2e2e2e 25%, rgb(14, 14, 14) 75%);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+section{
+    padding: 0 8%;
+}
+
+.heroText h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.heroText h1{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.heroText h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.heroText p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.heroImg img{
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all .3s linear;
+    border: 10px solid rgb(173, 255, 47, 0.4);
+    border-radius: 50%;
+}
+
+.heroImg img:hover{
+    width: 450px;
+    border: 10px solid rgb(173, 255, 47);
+}
+
+.heroText a{
+    display: inline-block;
+    background-color: rgb(173, 255, 47, 0.2);
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.heroText a:hover{
+    background-color: transparent;
+    border: 1px solid #adff2f;
+    transform: translateX(10%);
+}
+
+.heroText a.github{
+    background-color: rgb(173, 255, 47, 0.2);
+    border: 1px solid #adff2f;
+    margin-left: 20px;
+}
+
+.heroText a.github:hover{
+    background-color: transparent;
+    transform: rotate(360deg);
+}
+
+.heroText a.github i{
+    margin-right: 8px;
+}
+
+.icons{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i{
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all .3s ease;
+}
+
+.icons i:hover{
+    color: rgb(173, 255, 47, 0.5);
+    transform: translateY(-5px);
+}
+
+.scrollDown{
+    position: absolute;
+    bottom: 6%;
+    right: 6%;
+}
+
+.scrollDown i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: rgb(173, 255, 47, 0.2);
+    border-radius: 30px;
+    transition: all .3s ease;
+}
+
+.scrollDown i:hover{
+    animation: SubirYBajar 0.3s linear 5;
+}
+
+
+@media(max-width: 1000px){
+    section{
+        padding: 0 3%;
+        transition: .1s;
+    }
+    .heroText {
+        padding-top: 0;
+    }
+    .heroImg{
+        text-align: center;
+    }
+    .heroImg img{
+        width: 80%;
+        margin: 10%;
+    }
+    .heroText p{
+        font-size: 70%;
+    }
+    .icons{
+        display: none;
+    }
+    .scrollDown{
+        display: none;
+    }
+}
+
+@media(max-width: 780px){
+    .heroText{
+        text-align: center;
+        padding-top: 100px;
+    }
+}
+
+@media(max-width: 660px){
+    .menuIconAction{
+        display: block;
+    }
+    #menuIcon{
+        display: block;
+    }
+    .heroImg img{
+        margin: 0;
+    }
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .navList{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: rgb(14, 14, 14, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease-out;
+    }
+    .navList a{
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menuToggle:checked + label.menuIconAction + ul{
+        right: 0;
+    }
+}
+
+@media(max-width: 450px){
+    .heroText h1{
+        font-size: 40px;
+    }
+}
+
+@keyframes SubirYBajar {
+    0%, 100% {
+      transform: translateY(0); /* En el inicio y el final de la animación, no hay desplazamiento vertical */
+    }
+    50% {
+      transform: translateY(-15px); /* En el punto medio de la animación, el elemento se desplaza hacia arriba */
+    }
+}
+
